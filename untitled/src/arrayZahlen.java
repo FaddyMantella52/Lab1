@@ -1,6 +1,8 @@
 public class arrayZahlen {
 
     public static int[] sum(int[] zahl1, int[] zahl2) {
+        if(zahl1.length == 0 || zahl2.length == 0){
+            throw new IllegalArgumentException("Array length 0");}
         int[] result = new int[zahl1.length + 1];
         int carry = 0;
         for (int i = zahl1.length - 1; i >= 0; i--) {
@@ -13,6 +15,8 @@ public class arrayZahlen {
     }
 
     public static int[] sub(int[] zahl1, int[] zahl2) {
+        if(zahl1.length == 0 || zahl2.length == 0){
+            throw new IllegalArgumentException("Array length 0");}
         int[] result = new int[zahl1.length];
         int borrow = 0;
         boolean isNegative = false;
