@@ -1,6 +1,9 @@
 public class NotenProzessor {
 
-    public int[] nichtAusreichend(int[] note) {
+    public int[] nichtAusreichend(int[] note) throws Exception {
+        if(note.length == 0){
+            throw new IllegalArgumentException("Array length 0");
+        }
         int size = 0;
         for(int i = 0; i < note.length; i++) {
             if (note[i] < 38){
@@ -18,8 +21,11 @@ public class NotenProzessor {
         return result;
     }
     public int[] abrundungNoten(int[] note) {
-
+        if (note.length == 0){
+            throw new IllegalArgumentException("Array ist leer");
+        }
         for (int i = 0; i < note.length; i++) {
+
             if (note[i] < 0 || note[i] > 100) {
                 System.out.println("Noten soll zwischen 0 und 100 sein.");
                 return null;
@@ -37,6 +43,9 @@ public class NotenProzessor {
     }
 
     public int round(int note) {
+        if(note > 100){
+            throw new IllegalArgumentException("Zahl grosser als 100");
+        }
         if (note < 38) {
             return note;
         } else {
@@ -57,7 +66,10 @@ public class NotenProzessor {
         return result;
     }
 
-    public int maxNote(int[] noten) {
+    public int maxNote(int[] noten) throws Exception {
+        if(noten.length == 0){
+            throw new IllegalArgumentException("Array length 0");
+        }
         int max = 0;
         for (int i = 0; i < noten.length; i++) {
             if (noten[i] > max) {
@@ -68,6 +80,9 @@ public class NotenProzessor {
     }
 
     public int durschnittenWert(int[] noten) {
+        if(noten.length == 0){
+            throw new IllegalArgumentException("Array length 0");
+        }
         int sum = 0;
         int nrNoten = 0;
         for (int i = 0; i < noten.length; i++) {
