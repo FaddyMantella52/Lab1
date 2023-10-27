@@ -1,5 +1,7 @@
 public class Elektronik_Shop {
     public int billigste(int[] tastatur){
+        if(tastatur.length == 0){
+            throw new IllegalArgumentException("Array length 0");}
         int result = Integer.MAX_VALUE;
         for(int i=0; i < tastatur.length; i++){
             if(tastatur[i] < result){
@@ -10,6 +12,8 @@ public class Elektronik_Shop {
     }
 
     public int teuerste(int[] tastatur, int[] USB){
+        if(USB.length == 0 || tastatur.length == 0) {
+            throw new IllegalArgumentException("Array length 0");}
         int result1 = Integer.MIN_VALUE;
         int result2 = Integer.MIN_VALUE;
         for(int i=0; i < tastatur.length; i++){
@@ -29,6 +33,8 @@ public class Elektronik_Shop {
     }
 
     public int teursteMarkus(int[] USB , int budget){
+        if(USB.length == 0){
+            throw new IllegalArgumentException("Array length 0");}
         int result = Integer.MIN_VALUE;
         for(int i =0; i< USB.length; i++){
             if(result < USB[i] && USB[i] <= budget){
@@ -39,6 +45,8 @@ public class Elektronik_Shop {
     }
 
     public int budgetMarkus(int[] tastatur,int[] USB, int budget){
+        if(tastatur.length == 0 || USB.length == 0){
+            throw new IllegalArgumentException("Array length 0");}
         int maxAusgegeben = -1;
 
         for (int tastaturPreis : tastatur){
